@@ -1,5 +1,5 @@
 from player import Player
-
+from human import Human
 
 class Game:
     def __init__(self):
