@@ -11,8 +11,14 @@ class Human(Player):
         for player in self.gesture_list:
             print(f'Type {index} for {player}')
             index += 1
+        self.picked_gesture = input()
+        print(self.picked_gesture)
 
-        print (self.gesture_list)       
+    def pick_gesture(self):
+        pass
+
+
 
 battle = Human()
 battle.choose_gestures()
+
