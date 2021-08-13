@@ -1,5 +1,4 @@
 from ai import Computer
-from player import Player
 from human import Human
 
 class Game:
@@ -28,18 +27,25 @@ class Game:
         print("----pock vaporizes Rock----")
 
 
-    def play_game(self, first_player, second_player):
+    def play_game(self):
         # Determine Game Type - Single Player or Multi?
         print("Play against another player or computer?")
+        self.second_player = int(input("Enter '0' for single player or '1' for Multiplayer "))
+        # switch ={
+        #     '0' == Human(),
+        #     '1' == Computer(),
+        # }
+        if self.second_player == 0:
+            self.second_player = Computer()
+        elif self.second_player == 1:
+            self.second_player = Human()
         # Create players based on game type
-        first_player = Human()
-        second_player = input("Enter '0' for single player or '1' for Multiplayer")
-        switch ={
-            '0' == Human(),
-            '1' == Computer(),
-        }
+        self.first_player = Human()
+        # self.second_player = Human()
+        self.first_player.choose_gestures()
+        self.second_player.choose_gestures()
 
-        pass
+
         # Game Rounds - Repeat until one player has 2 points
         # Player one chooses a gesture 
         # -Prompt user to enter gesture
@@ -48,7 +54,8 @@ class Game:
         # Compare gestures 
         # -Winner gets a point
         # -No points if tie round
-        # Display winner of round 
+        # Display winner of round
+        
 
         # End game 
         # Display winner of Game 

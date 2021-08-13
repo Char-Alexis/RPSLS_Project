@@ -13,8 +13,5 @@ class Human(Player):
         self.picked_gesture = int(input())
         print(f'You have chosen {self.gesture_list[self.picked_gesture]}')
 
-    def pick_gesture(self):
-        pass
-
 # battle = Human()
 # battle.choose_gestures()
