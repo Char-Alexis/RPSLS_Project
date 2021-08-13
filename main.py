@@ -1,5 +1,6 @@
 from ai import Computer
 from human import Human
+from player import Player
 
 class Game:
     def __init__(self):
@@ -31,10 +32,6 @@ class Game:
         # Determine Game Type - Single Player or Multi?
         print("Play against another player or computer?")
         self.second_player = int(input("Enter '0' for single player or '1' for Multiplayer "))
-        # switch ={
-        #     '0' == Human(),
-        #     '1' == Computer(),
-        # }
         if self.second_player == 0:
             self.second_player = Computer()
         elif self.second_player == 1:
@@ -44,6 +41,28 @@ class Game:
         # self.second_player = Human()
         self.first_player.choose_gestures()
         self.second_player.choose_gestures()
+
+        
+    def determine_winner(self):
+        # self.first_player = 
+        # if spock or paper:
+        #     beats rock
+        # self.winning_combinations = Human(Player)
+        self.play_game()
+        if self.first_player == self.second_player:
+            print ("test")
+
+        # if scissors or lizard:
+        #     beats paper
+        # if rock or spock:
+        #      beats scissors
+        # if scissors or rock:
+        #     beat lizard
+        # if scissors or paper:
+        #     beat spock
+
+        
+        
 
 
         # Game Rounds - Repeat until one player has 2 points
@@ -59,7 +78,7 @@ class Game:
 
         # End game 
         # Display winner of Game 
-        pass
+        
 
     def determine_game_type(self):
         #set self.player_two to Human or AI
@@ -68,3 +87,4 @@ class Game:
 fight = Game()
 fight.display_game()
 fight.play_game()
+fight.determine_winner()
