@@ -13,13 +13,25 @@ class Game:
         # Welcome
         print("Welcome to Rock Paper Scissors Lizard Spock!")
         # Display rule, what beats what?
-        print("Rules of game:... Best 2 out of 3 wins")
+        print("Best 2 out of 3 wins")
+        print("Here is how you will win:")
+        print("Rock crushes Scissors")
+        print("Scissors cuts Paper")
+        print("Paper covers Rock")
+        print("Rock crushes Lizard")
+        print("Lizard poisons Spock")
+        print("Spock smashes Scissors")
+        print("Scissors decapitates Lizard")
+        print("Lizard eats Paper")
+        print("Paper disproves Spock")
+        print("Spock vaporizes Rock")
         # Determine Game Type - Single Player or Multi?
         print("Play against another player or computer?")
         # Create players based on game type
 
 
-
+    def play_game(self, first_player, second_player):
+        pass
         # Game Rounds - Repeat until one player has 2 points
         # Player one chooses a gesture 
         # -Prompt user to enter gesture
@@ -38,8 +50,5 @@ class Game:
         #set self.player_two to Human or AI
         pass
 
-    print("Play against another player or computer?")
-
-    print("Do you want to start game? Yes or No?")
-
-    print("Pick your choice: 1, 2, 3, 4, 5")
+# fight = Game()
+# fight.run_game()

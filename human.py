@@ -20,5 +20,4 @@ class Human(Player):
 
 
 battle = Human()
-battle.choose_gestures()
-
+battle.choose_gestures
