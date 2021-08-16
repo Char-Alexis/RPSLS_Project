@@ -48,8 +48,6 @@ class Game:
     def determine_winner(self):
         
         while self.first_player.score < 2 and self.second_player.score < 2:
-            print("Player one score is " + str(self.first_player.score))
-            print("Player Two score is " + str(self.second_player.score))
             self.first_player.choose_gestures()
             self.second_player.choose_gestures()
 # TIE
@@ -156,8 +154,10 @@ class Game:
                     self.second_player.picked_gesture +=1
             
             else:
-                print("Please try again")
-            
+                print("Your input was invalid. Please try again!")
+
+            print("Player One score is " + str(self.first_player.score))
+            print("Player Two score is " + str(self.second_player.score))
     
     def final_screen(self):
         if self.first_player.score == 2:

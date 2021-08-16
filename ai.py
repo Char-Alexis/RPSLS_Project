@@ -10,6 +10,3 @@ class Computer(Player):
         # self.picked_gesture = (random.choice(self.gesture_list))
         self.picked_gesture = random.randrange(0,4)
         print(f'Computer has chosen {self.gesture_list[self.picked_gesture]}')
-
-# battle = Computer()
-# battle.choose_gestures()
