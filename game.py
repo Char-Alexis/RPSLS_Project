@@ -158,8 +158,8 @@ class Game:
                     print ("second player wins, lizard crushes spock")
                     self.second_player.picked_gesture +=1
 
-        
-        
+            else:
+                print('Please try again.')
 
 
         # Game Rounds - Repeat until one player has 2 points
