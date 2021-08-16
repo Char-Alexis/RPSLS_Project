@@ -1,4 +1,9 @@
 from ai import Computer
+
+
+
+
+from ai import Computer
 from human import Human
 from player import Player
 
@@ -45,21 +50,112 @@ class Game:
         
     def determine_winner(self):
         # self.first_player = 
-        # if spock or paper:
-        #     beats rock
         # self.winning_combinations = Human(Player)
-        self.play_game()
-        if self.first_player == self.second_player:
-            print ("test")
+        # self.play_game()
 
-        # if scissors or lizard:
-        #     beats paper
-        # if rock or spock:
-        #      beats scissors
-        # if scissors or rock:
-        #     beat lizard
-        # if scissors or paper:
-        #     beat spock
+# TIE
+        if self.first_player.picked_gesture == self.second_player.picked_gesture:
+            print(self.first_player.picked_gesture)
+            print(self.second_player.picked_gesture)
+            print("Its a tie!")
+
+# ROCK
+
+        if self.first_player.picked_gesture == 0:
+            if self.second_player.picked_gesture == 1:
+                print("Second player wins, paper covers rock")
+                self.second_player.score += 1
+
+            if self.second_player.picked_gesture == 2:
+                print("first player wins, rock beats scissors ")
+                self.first_player.score += 1
+
+            if self.second_player.picked_gesture == 3:
+                print("first player wins, rock crushes lizard")
+                self.first_player.score += 1
+
+            if self.second_player.picked_gesture == 4:
+                print ("second player wins, spock crushes rock")
+                self.second_player.score += 1
+
+
+# PAPER
+
+        if self.first_player.picked_gesture == 1:
+            if self.second_player.picked_gesture == 0:
+                print ("first player wins")
+                self.first_player.score +=1
+
+            if self.second_player.picked_gesture == 2:
+                print("second player wins")
+                self.second_player.score += 1
+
+            if self.second_player.picked_gesture == 3:
+                print ("second player wins, lizard crushes paper")
+                self.second_player.score += 1
+
+            if self.second_player.picked_gesture == 4:
+                print ("first player wins, paper crushes spock")
+                self.first_player.score += 1
+
+
+# SCISSORS
+        if self.first_player.picked_gesture == 2:
+            if self.second_player.picked_gesture == 0:
+                print ('second player wins')
+                self.second_player.score += 1
+
+            if self.second_player.picked_gesture == 1:
+                print ("first player wins")
+                self.first_player.score += 1
+
+            if self.second_player.picked_gesture == 3:
+                print ("first player wins, scissors crushes lizards")
+                self.first_player.score += 1
+
+            if self.second_player.picked_gesture == 4:
+                print ("second player wins, scissors crushes spock")
+                self.second_player.score +=1
+
+
+# LIZARD
+
+        if self.first_player.picked_gesture == 3:
+            if self.second_player.picked_gesture == 0:
+                print ("second player wins, rock crushes lizard")
+                self.second_player.score += 1
+
+            if self.second_player.picked_gesture == 1:
+                print ("first player wins, lizard crushes paper")
+                self.first_player.score += 1
+
+            if self.second_player.picked_gesture == 2:
+                print ("second player wins, scissors crushes lizard")
+                self.second_player.score += 1
+
+            if self.second_player.picked_gesture == 4:
+                print ("first player wins, lizard crushes spock")
+                self.first_player.score += 1
+
+        
+# SPOCK
+
+        if self.first_player.picked_gesture == 4:
+            if self.second_player.picked_gesture == 0:
+                print("first player wins, spock crushes rock")
+                self.first_player.score += 1
+
+            if self.second_player.picked_gesture == 1:
+                print("second player wins, paper crushes spock")
+                self.second_player.score += 1
+
+            if self.second_player.picked_gesture == 2:
+                print ("first player wins, spock crushes scissors")
+                self.first_player.score += 1
+
+            if self.second_player.picked_gesture ==3:
+                print ("second player wins, lizard crushes spock")
+                self.second_player.picked_gesture +=1
 
         
         
@@ -78,13 +174,36 @@ class Game:
 
         # End game 
         # Display winner of Game 
-        
+    # def best_of(self):
+    #     self.second_player.score = 0
+    #     self.first_player.score = 0
+    #     determine_winner = math.ceil (n/2)
+    #     print (determine_winner)
 
-    def determine_game_type(self):
-        #set self.player_two to Human or AI
-        pass
+    #     while self.first_player.score < self.second_player.score and self.first_player.score > self.second_player.score:
+    #         if self.score == 0:
+    #             print ("its a tie")
+    #         elif self.score == 1:
+    #             self.first_player += 1
+    #             print("you won game :D")
+    #         else:
+    #             self.second_player += 1
+    #             print ("you lost game :( computer wins")
+
+    # def updated_score(self):
+    #     self.first_player.score += 1
+    #     self.second_player.score += 1
 
 fight = Game()
 fight.display_game()
+
 fight.play_game()
 fight.determine_winner()
+print(fight.first_player.score)
+print(fight.second_player.score)
+
+# fight.play_game()
+# fight.determine_winner()
+# print(fight.first_player.score)
+# print(fight.second_player.score)
+# fight.best_of
