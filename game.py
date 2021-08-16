@@ -60,59 +60,59 @@ class Game:
 
             elif self.first_player.picked_gesture == 0:
                 if self.second_player.picked_gesture == 1:
-                    print("Second player wins, paper covers rock")
+                    print("Second player wins, Paper covers Rock")
                     self.second_player.score += 1
                     
 
                 elif self.second_player.picked_gesture == 2:
-                    print("first player wins, rock beats scissors ")
+                    print("First player wins, Rock crushes Scissors ")
                     self.first_player.score += 1
                     
 
                 elif self.second_player.picked_gesture == 3:
-                    print("first player wins, rock crushes lizard")
+                    print("First player wins, Rock crushes Lizard")
                     self.first_player.score += 1
                     
 
                 elif self.second_player.picked_gesture == 4:
-                    print ("second player wins, spock crushes rock")
+                    print ("Second player wins, Spock vaporizes Rock")
                     self.second_player.score += 1                   
 # PAPER
 
             elif self.first_player.picked_gesture == 1:
                 if self.second_player.picked_gesture == 0:
-                    print ("first player wins")
+                    print ("First player wins, Paper covers Rock ")
                     self.first_player.score +=1
 
                 elif self.second_player.picked_gesture == 2:
-                    print("second player wins")
+                    print("Second player wins, Scissors cuts Paper")
                     self.second_player.score += 1
 
                 elif self.second_player.picked_gesture == 3:
-                    print ("second player wins, lizard crushes paper")
+                    print ("Second player wins, Lizard eats Paper")
                     self.second_player.score += 1
 
                 elif self.second_player.picked_gesture == 4:
-                    print ("first player wins, paper crushes spock")
+                    print ("First player wins, Paper disproves Spock")
                     self.first_player.score += 1
 
 
 # SCISSORS
             elif self.first_player.picked_gesture == 2:
                 if self.second_player.picked_gesture == 0:
-                    print ('second player wins')
+                    print ('Second player wins, Rock crushes Scissors')
                     self.second_player.score += 1
 
                 elif self.second_player.picked_gesture == 1:
-                    print ("first player wins")
+                    print ("First player wins, Scissors cuts Paper ")
                     self.first_player.score += 1
 
                 elif self.second_player.picked_gesture == 3:
-                    print ("first player wins, scissors crushes lizards")
+                    print ("First player wins, Scissors decapitates Lizards")
                     self.first_player.score += 1
 
                 elif self.second_player.picked_gesture == 4:
-                    print ("second player wins, scissors crushes spock")
+                    print ("Second player wins, Spock smashes Scissors")
                     self.second_player.score +=1
 
 
@@ -120,19 +120,19 @@ class Game:
 
             elif self.first_player.picked_gesture == 3:
                 if self.second_player.picked_gesture == 0:
-                    print ("second player wins, rock crushes lizard")
+                    print ("Second player wins, Rock crushes Lizard")
                     self.second_player.score += 1
 
                 elif self.second_player.picked_gesture == 1:
-                    print ("first player wins, lizard crushes paper")
+                    print ("First player wins, Lizard eats Paper")
                     self.first_player.score += 1
 
                 elif self.second_player.picked_gesture == 2:
-                    print ("second player wins, scissors crushes lizard")
+                    print ("Second player wins, Scissors decapitates Lizard")
                     self.second_player.score += 1
 
                 elif self.second_player.picked_gesture == 4:
-                    print ("first player wins, lizard crushes spock")
+                    print ("First player wins, Lizard poisons Spock")
                     self.first_player.score += 1
 
         
@@ -140,25 +140,24 @@ class Game:
 
             elif self.first_player.picked_gesture == 4:
                 if self.second_player.picked_gesture == 0:
-                    print("first player wins, spock crushes rock")
+                    print("First player wins, Spock vaporizes Rock")
                     self.first_player.score += 1
 
                 elif self.second_player.picked_gesture == 1:
-                    print("second player wins, paper crushes spock")
+                    print("Second player wins, Paper disproves Spock")
                     self.second_player.score += 1
 
                 elif self.second_player.picked_gesture == 2:
-                    print ("first player wins, spock crushes scissors")
+                    print ("First player wins, Spock smashes Scissors")
                     self.first_player.score += 1
 
                 elif self.second_player.picked_gesture ==3:
-                    print ("second player wins, lizard crushes spock")
+                    print ("Second player wins, Lizard poisons Spock")
                     self.second_player.picked_gesture +=1
             
             else:
                 print("Please try again")
-                self.first_player.choose_gestures()
-                self.second_player.choose_gestures()
+            
     
     def final_screen(self):
         if self.first_player.score == 2:
