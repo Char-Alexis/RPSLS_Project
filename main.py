@@ -1,9 +1,4 @@
 from ai import Computer
-
-
-
-
-from ai import Computer
 from human import Human
 from player import Player
 
