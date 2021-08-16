@@ -13,6 +13,7 @@ class Game:
         self.display_game()
         self.play_game()
         self.determine_winner()
+        self.final_screen()
 
     def display_game(self):
         # Setup Phase
@@ -30,7 +31,7 @@ class Game:
         print("----Scissors decapitates Lizard----")
         print("----Lizard eats Paper----")
         print("----Paper disproves Spock----")
-        print("----pock vaporizes Rock----")
+        print("----Spock vaporizes Rock----")
 
 
     def play_game(self):
@@ -43,19 +44,14 @@ class Game:
             self.second_player = Human()
         # Create players based on game type
         self.first_player = Human()
-        # self.second_player = Human()
         
     def determine_winner(self):
         
-        while self.first_player.score < 2 or self.second_player.score <2:
-
+        while self.first_player.score < 2 and self.second_player.score < 2:
+            print("Player one score is " + str(self.first_player.score))
+            print("Player Two score is " + str(self.second_player.score))
             self.first_player.choose_gestures()
             self.second_player.choose_gestures()
-
-            # self.first_player = 
-            # self.winning_combinations = Human(Player)
-            # self.play_game()
-
 # TIE
             if self.first_player.picked_gesture == self.second_player.picked_gesture:
                 print("Its a tie!")
@@ -66,20 +62,21 @@ class Game:
                 if self.second_player.picked_gesture == 1:
                     print("Second player wins, paper covers rock")
                     self.second_player.score += 1
+                    
 
                 elif self.second_player.picked_gesture == 2:
                     print("first player wins, rock beats scissors ")
                     self.first_player.score += 1
+                    
 
                 elif self.second_player.picked_gesture == 3:
                     print("first player wins, rock crushes lizard")
                     self.first_player.score += 1
+                    
 
                 elif self.second_player.picked_gesture == 4:
                     print ("second player wins, spock crushes rock")
-                    self.second_player.score += 1
-
-
+                    self.second_player.score += 1                   
 # PAPER
 
             elif self.first_player.picked_gesture == 1:
@@ -157,10 +154,17 @@ class Game:
                 elif self.second_player.picked_gesture ==3:
                     print ("second player wins, lizard crushes spock")
                     self.second_player.picked_gesture +=1
-
-        
-        
-
+            
+            else:
+                print("Please try again")
+                self.first_player.choose_gestures()
+                self.second_player.choose_gestures()
+    
+    def final_screen(self):
+        if self.first_player.score == 2:
+            print(f'Congratulations Player One for winning the game!')
+        elif self.second_player.score == 2:
+            print(f'Congratulations Player Two for winning the game!')
 
         # Game Rounds - Repeat until one player has 2 points
         # Player one chooses a gesture 
@@ -175,13 +179,3 @@ class Game:
 
         # End game 
         # Display winner of Game 
-
-
-
-
-
-# fight.play_game()
-# fight.determine_winner()
-# print(fight.first_player.score)
-# print(fight.second_player.score)
-# fight.best_of
