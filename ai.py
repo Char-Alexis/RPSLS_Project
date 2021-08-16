@@ -7,11 +7,9 @@ class Computer(Player):
 
     def choose_gestures(self):
         print("---Computer's turn:---")
-        index = 0
-        for player in self.gesture_list:
-            index += 1
-        self.picked_gesture = (random.choice(self.gesture_list))
-        print(f'Computer has chosen {self.picked_gesture}')
+        # self.picked_gesture = (random.choice(self.gesture_list))
+        self.picked_gesture = random.randrange(0,4)
+        print(f'Computer has chosen {self.gesture_list[self.picked_gesture]}')
 
 # battle = Computer()
 # battle.choose_gestures()
